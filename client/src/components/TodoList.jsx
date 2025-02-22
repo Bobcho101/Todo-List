@@ -3,6 +3,7 @@ import Task from "./Task";
 
 export default function TodoList(){ 
     const [data, setData] = useState([]);
+    const [isLoading, setLoading] = useState(true); 
     
     useEffect(() => {
         const fetchData = async () => {
@@ -10,6 +11,7 @@ export default function TodoList(){
                 const res = await fetch('http://localhost:3030/jsonstore/todos');
                 const data = await res.json();
                 setData(Object.values(data));
+                setLoading(false);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -26,11 +28,11 @@ export default function TodoList(){
                 <button className="btn">+ Add new Todo</button>
                 </div>
                 <div className="table-wrapper">
-                {/* <div className="loading-container">
+                {isLoading ? (<div className="loading-container">
                     <div className="loading-spinner">
                     <span className="loading-spinner-text">Loading</span>
                     </div>
-                </div> */}
+                </div>) : ''}
                 <table className="table">
                     <thead>
                     <tr>
