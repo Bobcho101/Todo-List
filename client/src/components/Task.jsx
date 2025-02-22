@@ -2,11 +2,12 @@ import { useEffect, useState } from "react"
 
 export default function Task({task}){
     const [status, setStatus] = useState(task.isCompleted);
-    
+    const [isLoading, setLoading] = useState(false);
 
     const changeStatusHandler = async () => {
         const updatedStatus = !status;
         try {
+            setLoading(true);
             const response = await fetch(`http://localhost:3030/jsonstore/todos/${task._id}`, {
                 method: "PUT", 
                 headers: {
@@ -18,7 +19,7 @@ export default function Task({task}){
                     isCompleted: updatedStatus
                 }),
             });
-
+            setLoading(false);
             setStatus(updatedStatus); 
         } catch (err) {
             console.log(err.message);
@@ -30,7 +31,7 @@ export default function Task({task}){
             <td>{task.text}</td> 
             <td>{status ? 'Completed' : 'Not Completed'}</td>
             <td className="todo-action">
-            <button onClick={() => changeStatusHandler()} className="btn todo-btn">Change status</button>
+            <button disabled={isLoading} onClick={() => changeStatusHandler()} className="btn todo-btn">{isLoading ? "Updating..." : "Change status"}</button>
             </td>
         </tr>
     )
