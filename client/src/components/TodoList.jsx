@@ -1,4 +1,22 @@
-export default function TodoList(){
+import { useEffect, useState } from "react";
+import Task from "./Task";
+
+export default function TodoList(){ 
+    const [data, setData] = useState([]);
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await fetch('http://localhost:3030/jsonstore/todos');
+                const data = await res.json();
+                setData(Object.values(data));
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+        fetchData();
+    }, []);
+
     return(
     <>
         <main className="main">
@@ -8,11 +26,11 @@ export default function TodoList(){
                 <button className="btn">+ Add new Todo</button>
                 </div>
                 <div className="table-wrapper">
-                <div className="loading-container">
+                {/* <div className="loading-container">
                     <div className="loading-spinner">
                     <span className="loading-spinner-text">Loading</span>
                     </div>
-                </div>
+                </div> */}
                 <table className="table">
                     <thead>
                     <tr>
@@ -22,7 +40,8 @@ export default function TodoList(){
                     </tr>
                     </thead>
                     <tbody>
-                    <tr className="todo is-completed">
+                    {data.map(el => <Task task={el} key={el._id}/> )}
+                    {/* <tr className="todo is-completed">
                         <td>Give dog a bath</td>
                         <td>Complete</td>
                         <td className="todo-action">
@@ -84,7 +103,7 @@ export default function TodoList(){
                         <td className="todo-action">
                         <button className="btn todo-btn">Change status</button>
                         </td>
-                    </tr>
+                    </tr> */}
                     </tbody>
                 </table>
                 </div>
