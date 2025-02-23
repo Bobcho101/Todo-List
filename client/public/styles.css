@@ -287,6 +287,38 @@ body {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  top: 50%;
+  top: 40%;
   z-index: 999;
+  background-color: #317b6a;
+  width: 30%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: 2px solid black;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+#create-box form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+#create-box form button{
+  background-color: #24292f;
+  color: white;
+  padding: 0.6em 2.3em;
+  cursor: pointer;
+}
+.create-form-el{
+  display: flex;
+  flex-direction: row;
+  gap:0.5em;
+}
+#x{
+  position: fixed;
+  top: 0;
+  right: 0;
+  cursor: pointer;
 }

@@ -4,7 +4,8 @@ import CreateTask from "./CreateTask";
 
 export default function TodoList(){ 
     const [data, setData] = useState([]);
-    const [isLoading, setLoading] = useState(true); 
+    const [isLoading, setLoading] = useState(true);
+    const [isCreate, setCreate] = useState(false); 
     
     useEffect(() => {
         const fetchData = async () => {
@@ -20,14 +21,18 @@ export default function TodoList(){
         fetchData();
     }, []);
 
+    function renderCreate(){
+        setCreate(isCreate => !isCreate)
+    }
+
     return(
     <>
-    <CreateTask />
+    {isCreate ? <CreateTask minimizeBtn={renderCreate} /> : ''}
         <main className="main">
             <section className="todo-list-container">
                 <h1>Todo List</h1>
                 <div className="add-btn-container">
-                <button className="btn">+ Add new Todo</button>
+                <button className="btn" onClick={() => renderCreate()}>+ Add new Todo</button>
                 </div>
                 <div className="table-wrapper">
                 {isLoading ? (<div className="loading-container">
