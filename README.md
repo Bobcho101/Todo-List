@@ -22,8 +22,7 @@ Note: The server used is SoftUni's practice server, not mine.
     node server
     ```
 
-3. **Run the Client**:
-    Open the integrated terminal in the client folder and type:
+3. **Run the Client**: Open the integrated terminal in the client folder and type:
     ```bash
     npm run dev
     ```
