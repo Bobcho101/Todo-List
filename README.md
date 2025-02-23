@@ -8,16 +8,32 @@ How to run the project:
 -server: open integrated terminal on the server folder and type: node server
 -client: open integrated terminal on the client folder and type: npm run dev -->
 
-# 📝 Todo-List Application
+# Todo-List
 
-This is my second React project: a Todo-List app that allows you to manage your tasks, with all data stored in a database. The server used is SoftUni's practice server.
+Welcome to my second React project! This is a todo list application where tasks are saved in a database. 
 
-## 🚀 Features
-- ✅ Change the status of tasks
-- ➕ Create new tasks
+## Features
+1. Change the status of tasks
+2. Create new tasks
 
-## 🛠️ How to Run the Project
+## Server
+Note: The server used is SoftUni's practice server, not mine.
 
-### 1. Install Dependencies
-```bash
-npm install
+## Setup Instructions
+
+1. **Download Dependencies**:
+    ```bash
+    npm install
+    ```
+
+2. **Run the Server**:
+    Open the integrated terminal in the server folder and type:
+    ```bash
+    node server
+    ```
+
+3. **Run the Client**:
+    Open the integrated terminal in the client folder and type:
+    ```bash
+    npm run dev
+    ```
