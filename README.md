@@ -16,8 +16,7 @@ Note: The server used is SoftUni's practice server, not mine.
     npm install
     ```
 
-2. **Run the Server**:
-    Open the integrated terminal in the server folder and type:
+2. **Run the Server**: Open the integrated terminal in the server folder and type:
     ```bash
     node server
     ```
