@@ -7,7 +7,7 @@ export default function TodoList(){
     const [isLoading, setLoading] = useState(true);
     const [isCreate, setCreate] = useState(false); 
     
-    useEffect(() => {
+    // useEffect(() => {
         const fetchData = async () => {
             try {
                 const res = await fetch('http://localhost:3030/jsonstore/todos');
@@ -16,18 +16,23 @@ export default function TodoList(){
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching data:', error);
-            }
+            }   
         }
+    //     fetchData();
+    // }, []);
+
+    useEffect(() => {
         fetchData();
     }, []);
 
     function renderCreate(){
         setCreate(isCreate => !isCreate)
     }
+    
 
     return(
     <>
-    {isCreate ? <CreateTask minimizeBtn={renderCreate} /> : ''}
+    {isCreate && <CreateTask minimizeBtn={renderCreate} refreshTasks={fetchData}/>}
         <main className="main">
             <section className="todo-list-container">
                 <h1>Todo List</h1>

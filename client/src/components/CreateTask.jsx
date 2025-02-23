@@ -1,11 +1,11 @@
-export default function CreateTask({minimizeBtn}){
+export default function CreateTask({minimizeBtn, refreshTasks}){
 
     async function formHandler(e){
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const text = formData.get('text');
         if(text.trim() === "") return;
-        
+
         try{
             const response = await fetch('http://localhost:3030/jsonstore/todos', {
                 method: 'POST',
@@ -17,8 +17,8 @@ export default function CreateTask({minimizeBtn}){
                     isCompleted: false
                 })
             })
+            refreshTasks();
             minimizeBtn();
-
         } catch(err){
             console.log(err.message);
         }
