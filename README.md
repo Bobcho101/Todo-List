@@ -2,12 +2,10 @@
 
 Welcome to my second React project! This is a todo list application where tasks are saved in a database. 
 
-## Features
+## Functionality
 1. Change the status of tasks
 2. Create new tasks
-
-## Server
-Note: The server used is SoftUni's practice server, not mine.
+ 
 
 ## How to run the project locally on your machine
 
@@ -25,3 +23,7 @@ Note: The server used is SoftUni's practice server, not mine.
     ```bash
     npm run dev
     ```
+
+
+## Notes
+- The server I used is SoftUni's practice server, not mine.
