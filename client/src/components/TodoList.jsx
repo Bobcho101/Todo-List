@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Task from "./Task";
+import CreateTask from "./CreateTask";
 
 export default function TodoList(){ 
     const [data, setData] = useState([]);
@@ -21,6 +22,7 @@ export default function TodoList(){
 
     return(
     <>
+    <CreateTask />
         <main className="main">
             <section className="todo-list-container">
                 <h1>Todo List</h1>

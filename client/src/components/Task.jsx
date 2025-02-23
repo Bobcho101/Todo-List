@@ -31,7 +31,11 @@ export default function Task({task}){
             <td>{task.text}</td> 
             <td>{status ? 'Completed' : 'Not Completed'}</td>
             <td className="todo-action">
-            <button disabled={isLoading} onClick={() => changeStatusHandler()} className="btn todo-btn">{isLoading ? "Updating..." : "Change status"}</button>
+            <button disabled={isLoading} 
+                onClick={() => changeStatusHandler()} 
+                className="btn todo-btn">{
+                isLoading ? "Updating..." : "Change status"}
+            </button>
             </td>
         </tr>
     )
