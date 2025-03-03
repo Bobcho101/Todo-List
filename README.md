@@ -14,12 +14,12 @@ Welcome to my second React project! This is a todo list application where tasks 
     npm install
     ```
 
-2. **Run the Server**: Open the integrated terminal in the server folder and type:
+2. **Run the Server**: Open integrated terminal in the server folder and type:
     ```bash
     node server
     ```
 
-3. **Run the Client**: Open the integrated terminal in the client folder and type:
+3. **Run the Client**: Open integrated terminal in the client folder and type:
     ```bash
     npm run dev
     ```
