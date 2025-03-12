@@ -474,7 +474,7 @@
 
     function get(context, tokens, query, body) {
         validateRequest(context, tokens);
-
+        
         let responseData;
 
         try {
@@ -1277,6 +1277,8 @@
         util$2()
     ];
 
+
+    
     const server = http__default['default'].createServer(requestHandler(plugins, services));
 
     const port = 3030;
